@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+ About
+-------------------------------------------------------------------------------
+
+BigPipe, a web performance buzzword coined by Facebook is a technique of 
+building web pages in chunks and flushing them from the web server to the 
+browser as and when they are ready in the same original request HTTP connection. 
+The key idea here is user perception, where a user instead of seeing a blank 
+page for few seconds and then suddenly seeing the whole page, will now receive 
+immediate feedback from server to consume and interact with few chunks while 
+the page is actually still been rendered. 
+More details can be found at 
+http://www.facebook.com/notes/facebook-engineering/bigpipe-pipelining-web-pages-for-high-performance/389414033919 
+
+There is a simple demo which illustrate the implementation of BigPipe. For 
+demonstration purpose I have used the eBay Motor’s homepage wireframe to
+simulate the technique. The page is divided into various modules and in real 
+time the data for these modules come from various webservices. The concept of 
+this demo is to flush the static wireframe as the first-byte flush as soon as 
+the request comes to the web server and then use JavaScript to inject the 
+various module contents that is built from the various webservice calls as and 
+when they are ready. Basically all the webservice calls are fired from the web 
+server in parallel, as and when the response comes back the data is flushed to 
+the browser and JavaScript injects the content to the associated module. The 
+demos does not make web service alls but flushes modules with delays. 
+
+The demo has two files
+dialup.php – Illustrates BigPipe in a very slow dialup connection, where the  
+			 techniques utilization is at the fullest 
+broadband.php - Illustrates BigPipe in a very fast broadband connection (same 
+			    as above with no forced delays)
+
+Most of the users fall between the above 2 buckets
+
+The JavaScript inject is a simple function which takes and the container ID and 
+content and sets the innerHTML
+/**
+ * 
+ * A simple JS function to inject markup into a particular container 
+ * 
+ * @function inject
+ * @param id {String} The container element ID
+ * @param content {String} The content markup for the container
+ * 
+ */			
+function inject(id, content) {
+	var elem = document.getElementById(id);
+	if(!elem) {
+		return;
+	}
+	elem.innerHTML = content;
+}
