@@ -13,7 +13,7 @@ More details can be found at
 http://www.facebook.com/notes/facebook-engineering/bigpipe-pipelining-web-pages-for-high-performance/389414033919 
 
 There is a simple demo which illustrate the implementation of BigPipe. For 
-demonstration purpose I have used the eBay Motor’s homepage wireframe to
+demonstration purpose I have used the eBay Motor's homepage wireframe to
 simulate the technique. The page is divided into various modules and in real 
 time the data for these modules come from various webservices. The concept of 
 this demo is to flush the static wireframe as the first-byte flush as soon as 
@@ -25,7 +25,7 @@ the browser and JavaScript injects the content to the associated module. The
 demos does not make web service alls but flushes modules with delays. 
 
 The demo has two files
-dialup.php – Illustrates BigPipe in a very slow dialup connection, where the  
+dialup.php - Illustrates BigPipe in a very slow dialup connection, where the  
 			 techniques utilization is at the fullest 
 broadband.php - Illustrates BigPipe in a very fast broadband connection (same 
 			    as above with no forced delays)
