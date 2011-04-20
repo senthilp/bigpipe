@@ -30,7 +30,7 @@ dialup.php - Illustrates BigPipe in a very slow dialup connection, where the
 broadband.php - Illustrates BigPipe in a very fast broadband connection (same 
 			    as above with no forced delays)
 
-Most of the users fall between the above 2 buckets
+Most of the users fall between the above 2 connection buckets
 
 The JavaScript inject is a simple function which takes and the container ID and 
 content and sets the innerHTML
