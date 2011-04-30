@@ -1,3 +1,6 @@
+<?php
+	sleep(2);
+?>
 <!doctype html>
 <html lang="en-US" >
 	<head> 
