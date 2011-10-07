@@ -123,6 +123,7 @@
 	</body>
 </html> 
 <?php
+	ob_flush();
 	flush();
 	sleep(1);
 ?>
@@ -130,48 +131,56 @@
 	inject("head1", '<div class="content">Header</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("left1", '<div class="content">Category Chooser</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("left2", '<div class="content">My eBay</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("right2", '<div class="content">Stats</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("head2", '<div class="content">Rebates</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("left3", '<div class="content">Last Viewed Items</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("left4", '<div class="content">Recent Searches</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 ?>
 <script>
 	inject("foot", '<div class="content">Footer</div>');
 </script>
 <?php
+	ob_flush();
 	flush();
 	sleep(1);
 ?>
