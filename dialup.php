@@ -125,7 +125,7 @@
 <?php
 	ob_flush();
 	flush();
-	sleep(3);
+	sleep(1);
 ?>
 <script>
 	inject("head1", '<div class="content">Header</div>');
